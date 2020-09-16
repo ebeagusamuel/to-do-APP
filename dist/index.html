@@ -5,33 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>to-do App</title>
-  <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
 </head>
 <body>
-  <nav class="navbar navbar-light bg-light text-center">
-    <a class="navbar-brand" href="#">
-      To-Do App
-    </a>
+  <nav class="navbar navbar-light bg-light">
+      <h3 align="center">Weekly Planner</h3>
   </nav>
-  <div class="container-fluid ">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-4 bg-danger">
-        <h3 align="center">Project</h3>
-        <button type="button" class="btn btn-primary">New project</button>
+      <div class="col-3 projectList">
+        <h3 align="center"><i class="fas fa-plus-square"></i> Project</h3>
         <ul>
           <li>Build House </li>
-          <li>Finish Course <i class="fa fa-trash" aria-hidden="true"></i></li>
+          <li>Finish Course <i class="fa fa-trash"></i></li>
         </ul>
       </div>
-      <div class="col-8 bg-primary">
-        <h3 align="center">Defaul Project Todo list</h3>
+      <div class="col-9 todoList">
+        <h3 align="center"> <i class="fas fa-plus-square"></i> New Task</h3>
         <ul>
           <li>build foundation</li>
         </ol>
       </div>
     </div>
   </div>
-
+  <footer>
+    <div>
+        Copyright &copy;&nbsp;2020 &nbsp;| Weekly Planner Inc.
+      </div>
+  </footer>
   <script type="text/javascript" src="main.js">  </script>
 </body>
 </html>
