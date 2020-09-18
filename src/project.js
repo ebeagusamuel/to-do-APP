@@ -17,6 +17,7 @@ const project = (() => {
 
   const createProjectTagElements = () => {
     const projectsContainer = document.createElement("div");
+    projectsContainer.setAttribute('id', 'projectsContainer');
     projects.forEach((project) => {
       const projectDiv = document.createElement("div");
       projectDiv.classList.add(

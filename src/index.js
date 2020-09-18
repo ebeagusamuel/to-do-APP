@@ -26,7 +26,11 @@ newProjectButton.addEventListener('click', () =>  {
     const newProject = project.createProject(projectName);
     store.saveProject(newProject);
   })
-  
 });
 
 projectDiv.appendChild(project.createProjectTagElements());
+
+const projectsContainer = document.getElementById('projectsContainer');
+projectsContainer.addEventListener('click', (e) => {
+  console.log(e.target.parentNode)
+})
