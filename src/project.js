@@ -13,6 +13,7 @@ const project = (() => {
       projects.splice(index, 1);
     }
     window.localStorage.setItem('projectName', JSON.stringify(projects));
+    location.reload();
   }
 
   const createProjectTagElements = () => {
@@ -39,9 +40,11 @@ const project = (() => {
       iconsDiv.classList.add("d-flex","ml-2");
 
       let addIconDiv = document.createElement('div');
+      addIconDiv.setAttribute('id', 'addProjectIcon');
       addIconDiv.innerHTML = `<i class="fas fa-plus-square">`;
 
       let deleteIconDiv = document.createElement('div');
+      deleteIconDiv.setAttribute('id', 'deleteProjectIcon');
       deleteIconDiv.classList.add("ml-2")
       deleteIconDiv.innerHTML = `<i class="fas fa-plus-square">`;
 

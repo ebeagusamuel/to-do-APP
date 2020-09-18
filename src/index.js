@@ -32,5 +32,8 @@ projectDiv.appendChild(project.createProjectTagElements());
 
 const projectsContainer = document.getElementById('projectsContainer');
 projectsContainer.addEventListener('click', (e) => {
-  console.log(e.target.parentNode)
-})
+  if(e.target.parentNode.getAttribute('id') === 'deleteProjectIcon'){
+    var name = e.target.parentNode.parentNode.parentNode.firstChild.innerText;
+    project.deleteProject(name);
+  }
+});
