@@ -5,6 +5,10 @@ body, html {
   font-size: 14px;
 }
 
+.content {
+  position: relative;
+}
+
 .todoDiv {
   background-image: url('https://images.unsplash.com/photo-1586202690180-1967f682ef1a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=683&q=80');
   background-position: center;

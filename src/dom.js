@@ -16,7 +16,7 @@ const dom = (() => {
 
     let projectDiv = document.createElement("div");
     projectDiv.classList.add("col-3", "px-0", "projectDiv");
-    projectDiv.innerHTML = `<h3 class='py-3 px-2' align="center"><i class="fas fa-plus-square"></i> Projects</h3>`;
+    projectDiv.innerHTML = `<h3 id="new-project" class='py-3 px-2' align="center"><i class="fas fa-plus-square"></i> Projects</h3>`;
 
     let toDoDiv = document.createElement("div");
     toDoDiv.classList.add("col-9", "p-0", "todoDiv");
