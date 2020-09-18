@@ -3,16 +3,19 @@ import "@fortawesome/fontawesome-free/js/fontawesome";
 import "@fortawesome/fontawesome-free/js/solid";
 import "@fortawesome/fontawesome-free/js/regular";
 import "@fortawesome/fontawesome-free/js/brands";
-import dom from "./dom";
+import skeleton from "./appSkeleton";
 import display from "./newProjectAndTaskForm"
 import project from './project'
 import store from './localStorage'
 
 const contentDiv = document.getElementById("content");
 
-contentDiv.appendChild(dom.nav());
-contentDiv.appendChild(dom.projectAndTaskContainer());
-contentDiv.appendChild(dom.footer());
+contentDiv.appendChild(skeleton.nav());
+contentDiv.appendChild(skeleton.projectAndTaskContainer());
+contentDiv.appendChild(skeleton.footer());
+
+const projectDiv = document.getElementById('projectDiv');
+const toDoDiv = document.getElementById('todoDiv');
 
 const newProjectButton = document.getElementById('new-project');
 newProjectButton.addEventListener('click', () =>  {
@@ -25,3 +28,5 @@ newProjectButton.addEventListener('click', () =>  {
   })
   
 });
+
+projectDiv.appendChild(project.createProjectTagElements());

@@ -1,4 +1,4 @@
-const dom = (() => {
+const skeleton = (() => {
   const nav = () => {
     let navBar = document.createElement("nav");
     navBar.classList.add("navbar", "navbar-light", "bg-secondary");
@@ -15,10 +15,12 @@ const dom = (() => {
     columnsDiv.classList.add("row", "myTodos");
 
     let projectDiv = document.createElement("div");
+    projectDiv.setAttribute('id', 'projectDiv')
     projectDiv.classList.add("col-3", "px-0", "projectDiv");
     projectDiv.innerHTML = `<h3 id="new-project" class='py-3 px-2' align="center"><i class="fas fa-plus-square"></i> Projects</h3>`;
 
     let toDoDiv = document.createElement("div");
+    toDoDiv.setAttribute('id', 'todoDiv')
     toDoDiv.classList.add("col-9", "p-0", "todoDiv");
     toDoDiv.innerHTML = `<h3 class='py-3' align="center">Tasks</>`;
 
@@ -39,4 +41,4 @@ const dom = (() => {
   return { nav, projectAndTaskContainer, footer };
 })();
 
-export default dom;
+export default skeleton;
