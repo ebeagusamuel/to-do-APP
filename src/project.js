@@ -46,11 +46,11 @@ const project = (() => {
       let deleteIconDiv = document.createElement('div');
       deleteIconDiv.setAttribute('id', 'deleteProjectIcon');
       deleteIconDiv.classList.add("ml-2")
-      deleteIconDiv.innerHTML = `<i class="fas fa-plus-square">`;
+      deleteIconDiv.innerHTML = `<i class="fas fa-trash">`;
 
       iconsDiv.appendChild(addIconDiv);
       iconsDiv.appendChild(deleteIconDiv);
-  
+
       projectDiv.appendChild(projectPTag);
       projectDiv.appendChild(iconsDiv);
 
