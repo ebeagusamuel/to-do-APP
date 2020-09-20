@@ -22,7 +22,7 @@ const display = (() => {
   const newTaskForm = () => {
     const formDiv = document.createElement('div');
     formDiv.innerHTML = `
-    <form>
+    <form id="taskForm">
       <div class="form-group">
         <label for="newTask">Title</label>
         <input type="text" class="form-control" id="title" placeholder="Enter task to complete" required>
