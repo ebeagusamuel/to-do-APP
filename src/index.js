@@ -31,6 +31,7 @@ newProjectButton.addEventListener('click', () =>  {
 
 projectDiv.appendChild(project.createProjectTagElements());
 
+<<<<<<< HEAD
 const projectsContainer = document.getElementById('projectsContainer');
 projectsContainer.addEventListener('click', (e) => {
   if(e.target.parentNode.getAttribute('id') === 'deleteProjectIcon'){
@@ -60,3 +61,13 @@ projectsContainer.addEventListener('click', (e) => {
     project.deleteProject(name);
   }
 });
+=======
+const deleteProjectIcons = document.querySelectorAll('.deleteProjectIcon');
+deleteProjectIcons.forEach(icon => {
+  icon.addEventListener('click', (e) => {
+    var index = e.target.parentNode.parentNode.getAttribute('data-index');
+    project.deleteProject(index);
+  })
+})
+
+>>>>>>> de69d23522a3ee5ce5897b0711c9bd2c68c837d2

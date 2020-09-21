@@ -7,8 +7,7 @@ const project = (() => {
     return name;
   };
 
-  const deleteProject = (projectName) => {
-    var index = projects.indexOf(projectName);
+  const deleteProject = (index) => {
     if(index > -1){
       projects.splice(index, 1);
     }
@@ -19,7 +18,7 @@ const project = (() => {
   const createProjectTagElements = () => {
     const projectsContainer = document.createElement("div");
     projectsContainer.setAttribute('id', 'projectsContainer');
-    projects.forEach((project) => {
+    projects.forEach((project, index) => {
       const projectDiv = document.createElement("div");
       projectDiv.classList.add(
         "d-flex",
@@ -44,7 +43,8 @@ const project = (() => {
       addIconDiv.innerHTML = `<i class="fas fa-plus-square">`;
 
       let deleteIconDiv = document.createElement('div');
-      deleteIconDiv.setAttribute('id', 'deleteProjectIcon');
+      deleteIconDiv.setAttribute('class', 'deleteProjectIcon');
+      deleteIconDiv.setAttribute('data-index', index)
       deleteIconDiv.classList.add("ml-2")
       deleteIconDiv.innerHTML = `<i class="fas fa-trash">`;
 
