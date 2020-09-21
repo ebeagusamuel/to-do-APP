@@ -47,7 +47,9 @@ const task = (() => {
       tableRow.appendChild(taskPriority);
       tableRow.appendChild(deleteIcon);
 
-      taskContainer.appendChild(tableRow);
+      taskBody.appendChild(tableRow);
+
+      taskContainer.appendChild(taskBody);
     });
 
     return taskContainer;

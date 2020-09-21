@@ -58,6 +58,15 @@ newTaskIcons.forEach(icon => {
   });
 })
 
+const projectsContainers = document.querySelectorAll('.project');
+projectsContainers.forEach(project => {
+  project.addEventListener('click', (e) => {
+    var index = e.target.getAttribute('data-index');
+    var tasksArray = store.getTasks(index);
+    toDoDiv.appendChild(task.createTaskElement(tasksArray));
+  });
+})
+
 // toDoDiv.appendChild(task.createTaskElement());
 
 // const tasksContainer = document.getElementById('projectsContainer');

@@ -23,7 +23,8 @@ const project = (() => {
       projectDiv.style.fontWeight = "600";
 
       const projectPTag = document.createElement("p");
-      projectPTag.classList.add("p-0", "m-0");
+      projectPTag.classList.add("p-0", "m-0", "project");
+      projectPTag.setAttribute('data-index', index)
       projectPTag.style.cursor = "pointer"
       projectPTag.innerText = `${project}`;
 
