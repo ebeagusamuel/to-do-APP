@@ -1,15 +1,19 @@
 const skeleton = (() => {
   const nav = () => {
+    let navContainer = document.createElement('div');
+    navContainer.classList.add('navContainer')
     let navBar = document.createElement("nav");
-    navBar.classList.add("navbar", "navbar-light");
+    navBar.classList.add("navbar", "bg-secondary");
     navBar.innerHTML = `<h3>Weekly Planner</h3>`;
 
-    return navBar;
+    navContainer.appendChild(navBar)
+    return navContainer;
   };
 
   const projectAndTaskContainer = () => {
     let containerDiv = document.createElement("div");
     containerDiv.classList.add("container-fluid");
+    containerDiv.style.marginTop = '53px'
 
     let columnsDiv = document.createElement("div");
     columnsDiv.classList.add("row", "myTodos");

@@ -1,6 +1,5 @@
 const store = (() => {
-  const projects =
-    JSON.parse(window.localStorage.getItem("projects")) || [];
+  const projects = JSON.parse(window.localStorage.getItem("projects")) || [];
   const tasks = JSON.parse(window.localStorage.getItem("tasks")) || {};
 
   const saveProject = (project) => {
@@ -9,16 +8,21 @@ const store = (() => {
   };
 
   const deleteProject = (index) => {
-    if(index > -1){
-      if(tasks[index]){
+    if (index > -1) {
+      if (tasks[index]) {
         delete tasks[index];
+        var tasksKeys = Object.keys(tasks);
+        var newestTasks = {};
+        tasksKeys.forEach((task, index) => {
+          newestTasks[index.toString(10)] = tasks[task];
+        });
       }
       projects.splice(index, 1);
     }
-    window.localStorage.setItem('projects', JSON.stringify(projects));
-    window.localStorage.setItem("tasks", JSON.stringify(tasks));
+    window.localStorage.setItem("projects", JSON.stringify(projects));
+    window.localStorage.setItem("tasks", JSON.stringify(newestTasks));
     location.reload();
-  }
+  };
 
   const getProjects = () => {
     return projects;
@@ -35,9 +39,9 @@ const store = (() => {
     window.localStorage.setItem("tasks", JSON.stringify(tasks));
   };
 
-  const getTasks = index => {
-    return tasks[index]
-  }
+  const getTasks = (index) => {
+    return tasks[index];
+  };
 
   return { saveProject, deleteProject, getProjects, saveTask, getTasks };
 })();

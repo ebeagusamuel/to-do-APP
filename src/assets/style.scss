@@ -4,10 +4,18 @@ body, html {
   font-family: monospace;
 }
 
-.navbar h3 {
-  font-size: 34px;
-  font-weight: 600;
-  margin: auto;
+.navContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+
+  h3 {
+    font-size: 34px;
+    font-weight: 600;
+    margin: auto;
+  }
 }
 
 .content {
@@ -42,21 +50,10 @@ body, html {
   min-height: 95vh;
 }
 
-#myTable {
+.table {
   color: whitesmoke;
-  font-size: 20px;
-  padding: 10px;
-  width: 80%;
-  margin: auto;
-}
-
-thead {
-  font-size: 25px;
-  font-weight: 600;
-}
-
-td {
-  padding-right: 20px;
+  font-size: 1.5vw;
+  width: 90%;
 }
 
 footer div {

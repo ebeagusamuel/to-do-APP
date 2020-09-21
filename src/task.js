@@ -14,7 +14,7 @@ const task = (() => {
 
   const createTaskElement = (tasksArray) => {
     const taskContainer = document.createElement("table");
-    taskContainer.setAttribute("id", "myTable");
+    taskContainer.classList.add('table', 'mx-2', 'mb-5')
     const heading = document.createElement("thead");
     heading.innerHTML = `
       <tr>
@@ -30,6 +30,7 @@ const task = (() => {
     const taskBody = document.createElement("tbody");
     tasksArray.forEach((task, index) => {
       let tableRow = document.createElement("tr");
+      tableRow.classList.add('mb-2')
       let taskTitle = document.createElement("td");
       taskTitle.textContent = `${task.title}`;
       let taskDescription = document.createElement("td");
