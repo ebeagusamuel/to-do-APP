@@ -1,24 +1,16 @@
-import store from "./localStorage";
+import store from './localStorage'
 
-const projects = store.getProjects();
-
+const allProjects = store.getProjects();
 const project = (() => {
   const createProject = (name) => {
     return name;
   };
 
-  const deleteProject = (index) => {
-    if(index > -1){
-      projects.splice(index, 1);
-    }
-    window.localStorage.setItem('projectName', JSON.stringify(projects));
-    location.reload();
-  }
 
   const createProjectTagElements = () => {
     const projectsContainer = document.createElement("div");
     projectsContainer.setAttribute('id', 'projectsContainer');
-    projects.forEach((project, index) => {
+    allProjects.forEach((project, index) => {
       const projectDiv = document.createElement("div");
       projectDiv.classList.add(
         "d-flex",
@@ -61,7 +53,7 @@ const project = (() => {
     return projectsContainer;
   };
 
-  return { createProject, deleteProject, createProjectTagElements };
+  return { createProject, createProjectTagElements };
 })();
 
 export default project;

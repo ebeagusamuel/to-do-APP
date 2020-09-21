@@ -1,15 +1,27 @@
 const store = (() => {
-  const projectName =
-    JSON.parse(window.localStorage.getItem("projectName")) || [];
+  const projects =
+    JSON.parse(window.localStorage.getItem("projects")) || [];
   const tasks = JSON.parse(window.localStorage.getItem("tasks")) || {};
 
   const saveProject = (project) => {
-    projectName.push(project);
-    window.localStorage.setItem("projectName", JSON.stringify(projectName));
+    projects.push(project);
+    window.localStorage.setItem("projects", JSON.stringify(projects));
   };
 
+  const deleteProject = (index) => {
+    if(index > -1){
+      if(tasks[index]){
+        delete tasks[index];
+      }
+      projects.splice(index, 1);
+    }
+    window.localStorage.setItem('projects', JSON.stringify(projects));
+    window.localStorage.setItem("tasks", JSON.stringify(tasks));
+    location.reload();
+  }
+
   const getProjects = () => {
-    return projectName;
+    return projects;
   };
 
   const saveTask = (index, task) => {
@@ -23,7 +35,11 @@ const store = (() => {
     window.localStorage.setItem("tasks", JSON.stringify(tasks));
   };
 
-  return { saveProject, getProjects, saveTask };
+  const getTasks = index => {
+    return tasks[index]
+  }
+
+  return { saveProject, deleteProject, getProjects, saveTask, getTasks };
 })();
 
 export default store;

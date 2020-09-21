@@ -35,7 +35,7 @@ const deleteProjectIcons = document.querySelectorAll('.deleteProjectIcon');
 deleteProjectIcons.forEach(icon => {
   icon.addEventListener('click', (e) => {
     var index = e.target.parentNode.parentNode.getAttribute('data-index');
-    project.deleteProject(index);
+    store.deleteProject(index);
   })
 });
 
