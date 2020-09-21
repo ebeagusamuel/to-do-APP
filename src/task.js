@@ -12,34 +12,42 @@ const task = (() => {
     location.reload();
   }
 
-  const createTaskElement = () => {
-    const taskContainer = document.createElement("div");
-    taskContainer.setAttribute('id', 'taskContainer');
-    tasks.forEach((task) => {
-      const taskDiv = document.createElement('div');
-      taskDiv.classList.add("d-flex", "flex-wrap", "justify-content-center", "p-2", "my-3");
-      taskDiv.style.fontSize = "1.5vw";
-      taskDiv.style.fontWeight = "bold";
+  const createTaskElement = (tasksArray) => {
+    const taskContainer = document.createElement("table");
+    const heading = document.createElement("thead");
+    heading.innerHTML = `
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Due Date</th>
+        <th scope="col">Priority</th>
+        <th scope="col"></th>
+      </tr>
+    `;
+    taskContainer.appendChild(heading);
 
-      const taskParagraph = document.createElement('p');
-      taskParagraph.classList.add("p-0", "m-0");
-      taskParagraph.style.cursor = "pointer";
-      taskParagraph.innerText = `${task}`;
+    const taskBody = document.createElement("tbody");
+    tasksArray.forEach((task, index) => {
+      let tableRow = document.createElement("tr");
+      let taskTitle = document.createElement("td");
+      taskTitle.textContent = `${task.title}`;
+      let taskDescription = document.createElement("td");
+      taskDescription.textContent = `${task.description}`;
+      let taskDate = document.createElement("td");
+      taskDate.textContent = `${task.date}`;
+      let taskPriority = document.createElement("td");
+      taskPriority.textContent = `${task.taskPriority}`;
+      let deleteIcon = document.createElement("td");
+      deleteIcon.innerHTML = `<i class="fas fa-trash">`;
+      deleteIcon.setAttribute("data-index", index);
 
-      const iconsDiv = document.createElement("div");
-      iconsDiv.classList.add("d-flex", "ml-2");
+      tableRow.appendChild(taskTitle);
+      tableRow.appendChild(taskDescription);
+      tableRow.appendChild(taskDate);
+      tableRow.appendChild(taskPriority);
+      tableRow.appendChild(deleteIcon);
 
-      let deleteIconDiv = document.createElement('div');
-      deleteIconDiv.setAttribute('id', 'deleteTaskIcon');
-      deleteIconDiv.classList.add("ml-2");
-      deleteIconDiv.innerHTML = `<i class="fas fa-trash">`;
-
-      iconsDiv.appendChild(deleteIconDiv);
-
-      taskDiv.appendChild(taskParagraph);
-      taskDiv.appendChild(iconsDiv);
-
-      taskContainer.appendChild(taskDiv);
+      taskContainer.appendChild(tableRow);
     });
 
     return taskContainer;
