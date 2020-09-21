@@ -30,10 +30,11 @@ newProjectButton.addEventListener('click', () =>  {
 
 projectDiv.appendChild(project.createProjectTagElements());
 
-const projectsContainer = document.getElementById('projectsContainer');
-projectsContainer.addEventListener('click', (e) => {
-  if(e.target.parentNode.getAttribute('id') === 'deleteProjectIcon'){
-    var name = e.target.parentNode.parentNode.parentNode.firstChild.innerText;
-    project.deleteProject(name);
-  }
-});
+const deleteProjectIcons = document.querySelectorAll('.deleteProjectIcon');
+deleteProjectIcons.forEach(icon => {
+  icon.addEventListener('click', (e) => {
+    var index = e.target.parentNode.parentNode.getAttribute('data-index');
+    project.deleteProject(index);
+  })
+})
+
