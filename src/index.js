@@ -51,7 +51,6 @@ newTaskButton.addEventListener('click', () =>  {
   })
 });
 
-<<<<<<< HEAD
 toDoDiv.appendChild(task.createTaskElement());
 
 const tasksContainer = document.getElementById('projectsContainer');
@@ -61,5 +60,3 @@ projectsContainer.addEventListener('click', (e) => {
     project.deleteProject(name);
   }
 });
-=======
->>>>>>> 4963edc51dca4835bd7965ffc8f16c1a7e4206bf
