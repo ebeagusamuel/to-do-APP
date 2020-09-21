@@ -4,9 +4,10 @@ import "@fortawesome/fontawesome-free/js/solid";
 import "@fortawesome/fontawesome-free/js/regular";
 import "@fortawesome/fontawesome-free/js/brands";
 import skeleton from "./appSkeleton";
-import display from "./newProjectAndTaskForm"
-import project from './project'
-import store from './localStorage'
+import display from "./newProjectAndTaskForm";
+import project from './project';
+import task from './task';
+import store from './localStorage';
 
 const contentDiv = document.getElementById("content");
 
@@ -31,6 +32,28 @@ newProjectButton.addEventListener('click', () =>  {
 projectDiv.appendChild(project.createProjectTagElements());
 
 const projectsContainer = document.getElementById('projectsContainer');
+projectsContainer.addEventListener('click', (e) => {
+  if(e.target.parentNode.getAttribute('id') === 'deleteProjectIcon'){
+    var name = e.target.parentNode.parentNode.parentNode.firstChild.innerText;
+    project.deleteProject(name);
+  }
+});
+
+// Adding tasks to  a project
+const newTaskButton = document.getElementById('addProjectIcon');
+newTaskButton.addEventListener('click', () =>  {
+  contentDiv.appendChild(display.newTaskForm());
+
+  document.getElementById('taskForm').addEventListener('submit', (e) => {
+    const taskTitle = document.getElementById('title').value;
+    const newtask = project.createProject(projectName);
+    store.saveProject(newProject);
+  })
+});
+
+toDoDiv.appendChild(task.createTaskElement());
+
+const tasksContainer = document.getElementById('projectsContainer');
 projectsContainer.addEventListener('click', (e) => {
   if(e.target.parentNode.getAttribute('id') === 'deleteProjectIcon'){
     var name = e.target.parentNode.parentNode.parentNode.firstChild.innerText;
