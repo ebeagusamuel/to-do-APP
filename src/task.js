@@ -1,8 +1,6 @@
-let tasks = {}
-
 const task = (() => {
   const createTask = (title, description, date, taskPriority) => {
-    return title, description, date, taskPriority;
+    return {title, description, date, taskPriority};
   };
 
   const deleteTask = (taskName) => {

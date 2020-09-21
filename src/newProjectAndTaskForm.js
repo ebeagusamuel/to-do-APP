@@ -30,23 +30,23 @@ const display = (() => {
     formDiv.innerHTML = `
     <form id="taskForm">
       <div class="form-group">
-        <label for="newTask">Title</label>
-        <input type="text" class="form-control" id="title" placeholder="Enter task to complete" required>
+        <label for="newTask">Title:</label>
+        <input type="text" class="form-control" id="taskTitle", name="taskTitle" placeholder="Enter task to complete" required>
       </div>
       <div class="form-group">
         <label for="projectName">Description:</label>
-        <textarea type="text" class="form-control" id="description" placeholder="Task description" required rows="3"></textarea>
+        <textarea type="text" class="form-control" id="taskDescription", name="taskDescription" placeholder="Task description" required rows="3"></textarea>
       </div>
       <div class="form-group">
         <label for="projectName">Due Date:</label>
-        <input type="date" class="form-control" id="date" placeholder="Due date" min="2020-09-09" required>
+        <input type="date" class="form-control" id="taskDate", name="taskDate" placeholder="Due date" min="2020-09-09" required>
       </div>
       <div class="form-group">
-        <label for="exampleFormControlSelect1">Priority</label>
-        <select class="form-control" id="taskPriority">
-          <option>High</option>
-          <option>Medium</option>
-          <option>Low</option>
+        <label for="exampleFormControlSelect1">Priority:</label>
+        <select class="form-control" id="taskPriority", name="taskPriority">
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
         </select>
       </div>
       <button type="submit" class="btn btn-dark">Submit</button>

@@ -39,7 +39,8 @@ const project = (() => {
       iconsDiv.classList.add("d-flex","ml-2");
 
       let addIconDiv = document.createElement('div');
-      addIconDiv.setAttribute('id', 'addProjectIcon');
+      addIconDiv.setAttribute('class', 'addProjectIcon');
+      addIconDiv.setAttribute('data-index', index)
       addIconDiv.innerHTML = `<i class="fas fa-plus-square">`;
 
       let deleteIconDiv = document.createElement('div');
