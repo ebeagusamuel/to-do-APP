@@ -14,6 +14,7 @@ const task = (() => {
 
   const createTaskElement = (tasksArray) => {
     const taskContainer = document.createElement("table");
+    taskContainer.setAttribute("id", "myTable");
     const heading = document.createElement("thead");
     heading.innerHTML = `
       <tr>

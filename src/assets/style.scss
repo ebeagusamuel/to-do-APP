@@ -2,7 +2,12 @@
 
 body, html {
   font-family: monospace;
-  // font-size: 14px;
+}
+
+.navbar h3 {
+  font-size: 34px;
+  font-weight: 600;
+  margin: auto;
 }
 
 .content {
@@ -35,6 +40,23 @@ body, html {
 
 .myTodos {
   min-height: 95vh;
+}
+
+#myTable {
+  color: whitesmoke;
+  font-size: 20px;
+  padding: 10px;
+  width: 80%;
+  margin: auto;
+}
+
+thead {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+td {
+  padding-right: 20px;
 }
 
 footer div {
