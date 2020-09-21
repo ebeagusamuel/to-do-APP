@@ -1,8 +1,8 @@
 let tasks = []
 
 const task = (() => {
-  const createTask = (title, description, dueDate, priority) => {
-    return title, description, dueDate, priority;
+  const createTask = (title, description, date, taskPriority) => {
+    return title, description, date, taskPriority;
   };
 
   const deleteTask = (taskName) => {

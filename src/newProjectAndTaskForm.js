@@ -21,6 +21,12 @@ const display = (() => {
 
   const newTaskForm = () => {
     const formDiv = document.createElement('div');
+    formDiv.classList.add("w-50", "w-md-25", "p-3", "rounded");
+    formDiv.style.backgroundColor = "#fff"
+    formDiv.style.position = "absolute";
+    formDiv.style.top = "150px"
+    formDiv.style.left = "25%";
+    formDiv.style.right = "25%";
     formDiv.innerHTML = `
     <form id="taskForm">
       <div class="form-group">
@@ -33,7 +39,7 @@ const display = (() => {
       </div>
       <div class="form-group">
         <label for="projectName">Due Date:</label>
-        <input type="datetime-local" class="form-control" id="date" placeholder="Due date" required>
+        <input type="date" class="form-control" id="date" placeholder="Due date" min="2020-09-09" required>
       </div>
       <div class="form-group">
         <label for="exampleFormControlSelect1">Priority</label>
@@ -43,7 +49,7 @@ const display = (() => {
           <option>Low</option>
         </select>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-dark">Submit</button>
     </form>`;
 
     return formDiv;
