@@ -1,4 +1,4 @@
-let tasks = []
+let tasks = {}
 
 const task = (() => {
   const createTask = (title, description, date, taskPriority) => {

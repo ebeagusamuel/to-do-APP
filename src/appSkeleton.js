@@ -1,7 +1,7 @@
 const skeleton = (() => {
   const nav = () => {
     let navBar = document.createElement("nav");
-    navBar.classList.add("navbar", "navbar-light", "bg-secondary");
+    navBar.classList.add("navbar", "navbar-light");
     navBar.innerHTML = `<h3>Weekly Planner</h3>`;
 
     return navBar;
