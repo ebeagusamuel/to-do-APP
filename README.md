@@ -44,6 +44,31 @@ This is a small To-Do-List application where the user can create projects and ad
 
 [Project live link](https://rawcdn.githack.com/ebeagusamuel/to-do-APP/0ccfc076ba2c2e5049ef31a8a469d89f0d80563e/dist/index.html)
 
+
+### Built With
+
+This project was built using these technologies.
+
+- Javascript
+- HTML/CSS
+- ESlint
+- VSCode editor
+- Git-Flow
+
+### Prerequisite
+- Basic knowledge of JavaScript, HTML and CSS.
+- Code-Editor
+- Node
+- git
+
+### Usage
+- Clone the project to your local machine.
+- `cd` into the project directory.
+- run `npm install` to install project dependencies.
+- run `npm run dev` to compile project assests with webpack.
+- You can also use webpack in watch mode by running `npm run watch`
+- open index.html in your browser
+
 ## Contributing
 
 Contributions, issues and feature requests are welcome! Start by:
@@ -55,16 +80,6 @@ Contributions, issues and feature requests are welcome! Start by:
 - Make your contributions
 - Push your branch up to your forked repository
 - Open a Pull Request with a detailed description to the development branch of the original project for a review
-
-### Built With
-
-This project was built using these technologies.
-
-- Javascript
-- HTML/CSS
-- ESlint
-- VSCode editor
-- Git-Flow
 
 ## Contributors
 
