@@ -1,21 +1,12 @@
 const task = (() => {
-  const createTask = (title, description, date, taskPriority) => {
-    return {title, description, date, taskPriority};
-  };
+  const createTask = (title, description, date, taskPriority) => ({
+    title, description, date, taskPriority,
+  });
 
-  const deleteTask = (taskName) => {
-    let index = tasks.indexOf(taskName);
-    if (index > -1) {
-      tasks.splice(index, 1);
-    }
-    window.localStorage.setItem('taskName', JSON.stringify(tasks));
-    location.reload();
-  }
-
-  const createTaskElement = (tasksArray) => {
-    const taskContainer = document.createElement("table");
-    taskContainer.classList.add('table', 'mx-2', 'mb-5')
-    const heading = document.createElement("thead");
+  const createTaskElement = (tasksArray, projectIndex) => {
+    const taskContainer = document.createElement('table');
+    taskContainer.classList.add('table', 'mx-2', 'mb-5');
+    const heading = document.createElement('thead');
     heading.innerHTML = `
       <tr>
         <th scope="col">Title</th>
@@ -27,27 +18,33 @@ const task = (() => {
     `;
     taskContainer.appendChild(heading);
 
-    const taskBody = document.createElement("tbody");
+    const taskBody = document.createElement('tbody');
     tasksArray.forEach((task, index) => {
-      let tableRow = document.createElement("tr");
-      tableRow.classList.add('mb-2')
-      let taskTitle = document.createElement("td");
+      const tableRow = document.createElement('tr');
+      tableRow.classList.add('mb-2');
+      const taskTitle = document.createElement('td');
       taskTitle.textContent = `${task.title}`;
-      let taskDescription = document.createElement("td");
+      const taskDescription = document.createElement('td');
       taskDescription.textContent = `${task.description}`;
-      let taskDate = document.createElement("td");
+      const taskDate = document.createElement('td');
       taskDate.textContent = `${task.date}`;
-      let taskPriority = document.createElement("td");
+      const taskPriority = document.createElement('td');
       taskPriority.textContent = `${task.taskPriority}`;
-      let deleteIcon = document.createElement("td");
-      deleteIcon.innerHTML = `<i class="fas fa-trash">`;
-      deleteIcon.setAttribute("data-index", index);
+      const deleteTaskIconContainer = document.createElement('td');
+      const deleteTaskIconDiv = document.createElement('div');
+
+      deleteTaskIconDiv.innerHTML = '<i class="fas fa-trash">';
+      deleteTaskIconDiv.setAttribute('data-projectIndex', projectIndex);
+      deleteTaskIconDiv.setAttribute('data-taskIndex', index);
+      deleteTaskIconDiv.setAttribute('class', 'deleteTaskIcon');
+
+      deleteTaskIconContainer.appendChild(deleteTaskIconDiv);
 
       tableRow.appendChild(taskTitle);
       tableRow.appendChild(taskDescription);
       tableRow.appendChild(taskDate);
       tableRow.appendChild(taskPriority);
-      tableRow.appendChild(deleteIcon);
+      tableRow.appendChild(deleteTaskIconContainer);
 
       taskBody.appendChild(tableRow);
 
@@ -57,7 +54,7 @@ const task = (() => {
     return taskContainer;
   };
 
-  return { createTask, deleteTask, createTaskElement };
+  return { createTask, createTaskElement };
 })();
 
 export default task;

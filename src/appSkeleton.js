@@ -1,32 +1,32 @@
 const skeleton = (() => {
   const nav = () => {
-    let navContainer = document.createElement('div');
-    navContainer.classList.add('navContainer')
-    let navBar = document.createElement("nav");
-    navBar.classList.add("navbar", "bg-secondary");
-    navBar.innerHTML = `<h3>Weekly Planner</h3>`;
+    const navContainer = document.createElement('div');
+    navContainer.classList.add('navContainer');
+    const navBar = document.createElement('nav');
+    navBar.classList.add('navbar', 'bg-secondary');
+    navBar.innerHTML = '<h3>Weekly Planner</h3>';
 
-    navContainer.appendChild(navBar)
+    navContainer.appendChild(navBar);
     return navContainer;
   };
 
   const projectAndTaskContainer = () => {
-    let containerDiv = document.createElement("div");
-    containerDiv.classList.add("container-fluid");
-    containerDiv.style.marginTop = '53px'
+    const containerDiv = document.createElement('div');
+    containerDiv.classList.add('container-fluid');
+    containerDiv.style.marginTop = '53px';
 
-    let columnsDiv = document.createElement("div");
-    columnsDiv.classList.add("row", "myTodos");
+    const columnsDiv = document.createElement('div');
+    columnsDiv.classList.add('row', 'myTodos');
 
-    let projectDiv = document.createElement("div");
-    projectDiv.setAttribute('id', 'projectDiv')
-    projectDiv.classList.add("col-3", "px-0", "projectDiv");
-    projectDiv.innerHTML = `<h3 id="new-project" class='py-3 px-2' align="center"><i class="fas fa-plus-square"></i> Projects</h3>`;
+    const projectDiv = document.createElement('div');
+    projectDiv.setAttribute('id', 'projectDiv');
+    projectDiv.classList.add('col-3', 'px-0', 'projectDiv');
+    projectDiv.innerHTML = '<h3 id="new-project" class=\'py-3 px-2\' align="center"><i class="fas fa-plus-square"></i> Projects</h3>';
 
-    let toDoDiv = document.createElement("div");
-    toDoDiv.setAttribute('id', 'todoDiv')
-    toDoDiv.classList.add("col-9", "p-0", "todoDiv");
-    toDoDiv.innerHTML = `<h3 class='py-3' align="center">Tasks</>`;
+    const toDoDiv = document.createElement('div');
+    toDoDiv.setAttribute('id', 'todoDiv');
+    toDoDiv.classList.add('col-9', 'p-0', 'todoDiv');
+    toDoDiv.innerHTML = '<h3 class=\'py-3\' align="center">Tasks</>';
 
     columnsDiv.appendChild(projectDiv);
     columnsDiv.appendChild(toDoDiv);
@@ -36,8 +36,8 @@ const skeleton = (() => {
   };
 
   const footer = () => {
-    let footerContainer = document.createElement("footer");
-    footerContainer.innerHTML = `<div> Copyright &copy;&nbsp;2020 &nbsp;|&nbsp; Weekly Planner Inc. </div>`;
+    const footerContainer = document.createElement('footer');
+    footerContainer.innerHTML = '<div> Copyright &copy;&nbsp;2020 &nbsp;|&nbsp; Weekly Planner Inc. </div>';
 
     return footerContainer;
   };

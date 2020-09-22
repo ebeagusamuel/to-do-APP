@@ -1,12 +1,12 @@
 const display = (() => {
   const newProjectForm = () => {
-    const formDiv = document.createElement("div");
-    formDiv.classList.add("w-50", "w-md-25", "p-3", "rounded");
-    formDiv.style.backgroundColor = "#fff"
-    formDiv.style.position = "absolute";
-    formDiv.style.top = "150px"
-    formDiv.style.left = "25%";
-    formDiv.style.right = "25%";
+    const formDiv = document.createElement('div');
+    formDiv.classList.add('w-50', 'w-md-25', 'p-3', 'rounded');
+    formDiv.style.backgroundColor = '#fff';
+    formDiv.style.position = 'absolute';
+    formDiv.style.top = '150px';
+    formDiv.style.left = '25%';
+    formDiv.style.right = '25%';
     formDiv.innerHTML = `
     <form id="projectForm">
       <div class="form-group">
@@ -21,12 +21,12 @@ const display = (() => {
 
   const newTaskForm = () => {
     const formDiv = document.createElement('div');
-    formDiv.classList.add("w-50", "w-md-25", "p-3", "rounded");
-    formDiv.style.backgroundColor = "#fff"
-    formDiv.style.position = "absolute";
-    formDiv.style.top = "150px"
-    formDiv.style.left = "25%";
-    formDiv.style.right = "25%";
+    formDiv.classList.add('w-50', 'w-md-25', 'p-3', 'rounded');
+    formDiv.style.backgroundColor = '#fff';
+    formDiv.style.position = 'absolute';
+    formDiv.style.top = '150px';
+    formDiv.style.left = '25%';
+    formDiv.style.right = '25%';
     formDiv.innerHTML = `
     <form id="taskForm">
       <div class="form-group">
@@ -55,7 +55,7 @@ const display = (() => {
     return formDiv;
   };
 
-  return {newProjectForm, newTaskForm};
+  return { newProjectForm, newTaskForm };
 })();
 
 export default display;
