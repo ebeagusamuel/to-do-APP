@@ -42,9 +42,7 @@ This is a small To-Do-List application where the user can create projects and ad
   </a>
 </p>
 
-<p align="center">
-  [Project live link](https://rawcdn.githack.com/ebeagusamuel/to-do-APP/0ccfc076ba2c2e5049ef31a8a469d89f0d80563e/dist/index.html)
-</p>
+[Project live link](https://rawcdn.githack.com/ebeagusamuel/to-do-APP/0ccfc076ba2c2e5049ef31a8a469d89f0d80563e/dist/index.html)
 
 ## Contributing
 
