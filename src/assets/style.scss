@@ -1,0 +1,73 @@
+@import "~bootstrap/scss/bootstrap";
+
+body,
+html {
+  font-family: monospace;
+}
+
+.navContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+
+  h3 {
+    font-size: 34px;
+    font-weight: 600;
+    margin: auto;
+  }
+}
+
+.content {
+  position: relative;
+}
+
+.todoDiv {
+  background-image: url('https://images.unsplash.com/photo-1586202690180-1967f682ef1a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=683&q=80');
+  background-position: center;
+  background-size: cover;
+
+  h3 {
+    font-size: 5vw;
+    font-weight: 700;
+    color: #fff;
+  }
+}
+
+.projectDiv {
+  background-image: url('https://images.unsplash.com/photo-1536566482680-fca31930a0bd?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80');
+  background-position: center;
+  background-size: cover;
+
+  h3 {
+    font-size: 3vw;
+    font-weight: 700;
+    border-bottom: 1px #000 solid;
+  }
+}
+
+.myTodos {
+  min-height: 95vh;
+}
+
+.table {
+  color: whitesmoke;
+  font-size: 1.5vw;
+  width: 90%;
+}
+
+footer div {
+  position: fixed;
+  box-sizing: border-box;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 1rem;
+  font-family: sans-serif;
+  color: #fff;
+  font-weight: 600;
+  background-color: #000;
+}
